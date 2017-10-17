@@ -6,8 +6,8 @@ import socketio from 'feathers-socketio/client'
 // Check if is running on the browser
 // TODO Get host and port from environment variables
 const apiUrl = typeof window !== 'undefined'
-        ? 'http://localhost:3001' // on browser
-        : 'http://backend:3001'   // on Node.js
+        ? 'http://localhost:3030' // on browser
+        : 'http://backend:3030'   // on Node.js
 
 const socket = io(apiUrl)
 const client = feathers()
