@@ -50,6 +50,16 @@ services:
         target: /var/lib/postgresql/data
         volume:
           nocopy: true
+  pgadmin:
+    image: fenglc/pgadmin4:2.0
+    environment:
+      # password 'admin'
+      - DEFAULT_USER=admin
+    networks:
+      - backend
+    ports:
+      # host:container
+      - 5050:5050
 
 networks:
   frontend:
