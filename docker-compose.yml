@@ -33,8 +33,11 @@ services:
       - 3030:3030
     volumes:
       - type: bind
-        source: ./api/src
-        target: /olimat/api/src
+        source: ./api
+        target: /olimat/api
+      - type: volume
+        source: node_modules
+        target: /olimat/api/node_modules
   db:
     build:
       context: ./db
@@ -67,3 +70,4 @@ networks:
 
 volumes:
   db-data:
+  node_modules:
