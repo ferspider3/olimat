@@ -16,7 +16,7 @@ describe('Feathers application tests', () => {
       return rp({
         url: 'http://api:3030/path/to/nowhere',
         headers: {
-          'Accept': 'text/html'
+          Accept: 'text/html'
         }
       }).catch(res => {
         assert.equal(res.statusCode, 404)

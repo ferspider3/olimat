@@ -6,25 +6,21 @@ const app = require('../../app')
 
 const knex = app.get('knexClient')
 
-describe('\'questions\' service', () => {
+describe("'questions' service", () => {
   beforeEach(done => {
-    knex.migrate.rollback()
-      .then(() => {
-        knex.migrate.latest()
-          .then(() => {
-            knex.seed.run()
-              .then(() => {
-                done()
-              })
-          })
+    knex.migrate.rollback().then(() => {
+      knex.migrate.latest().then(() => {
+        knex.seed.run().then(() => {
+          done()
+        })
       })
+    })
   })
 
   afterEach(done => {
-    knex.migrate.rollback()
-      .then(() => {
-        done()
-      })
+    knex.migrate.rollback().then(() => {
+      done()
+    })
   })
 
   test('registered the service', () => {
