@@ -11,6 +11,7 @@
     "test": "test/"
   },
   "scripts": {
+    "format": "prettier-standard '{config,db,src}/**/*.js'",
     "dev": "nodemon ./src/index.js",
     "build": "",
     "start": "node ./src/index.js",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "jest": "^21.1.0",
     "nodemon": "^1.11.0",
+    "prettier-standard": "^7.0.3",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
   }
